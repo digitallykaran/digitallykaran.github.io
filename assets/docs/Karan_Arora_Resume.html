@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      Karan Deepak Arora - NetSuite Techno-Functional Consultant Resume
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        font-size: 9.2pt;
+        line-height: 1.38;
+        color: #1a1a1a;
+        background-color: #ffffff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        height: 297mm;
+        padding: 16mm 18mm 14mm 18mm;
+        margin: 0 auto;
+        background: #ffffff;
+        position: relative;
+        page-break-after: always;
+        break-after: page;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Header */
+      .header {
+        text-align: center;
+        margin-bottom: 12px;
+      }
+
+      .header h1 {
+        font-size: 19pt;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        color: #0f172a;
+        text-transform: uppercase;
+        margin-bottom: 3px;
+      }
+
+      .header .title {
+        font-size: 10.5pt;
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 4px;
+      }
+
+      .header .contact-info {
+        font-size: 8.8pt;
+        color: #334155;
+        font-weight: 400;
+      }
+
+      .header .contact-info a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .header .separator {
+        margin: 0 6px;
+        color: #94a3b8;
+      }
+
+      /* Section Styling */
+      .section {
+        margin-bottom: 11px;
+      }
+
+      .section-title {
+        font-size: 9.8pt;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: #0f172a;
+        border-bottom: 1.2px solid #0f172a;
+        padding-bottom: 2px;
+        margin-bottom: 6px;
+      }
+
+      /* Profile Summary */
+      .summary-text {
+        font-size: 8.9pt;
+        line-height: 1.38;
+        color: #1e293b;
+        text-align: justify;
+      }
+
+      /* Experience Items */
+      .job-item {
+        margin-bottom: 9px;
+      }
+
+      .job-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 3px;
+      }
+
+      .job-title-company {
+        font-size: 9.4pt;
+        font-weight: 700;
+        color: #0f172a;
+      }
+
+      .job-title-company .role-name {
+        font-weight: 700;
+        color: #0f172a;
+      }
+
+      .job-title-company .company-name {
+        font-weight: 600;
+        color: #1e293b;
+      }
+
+      .job-dates {
+        font-size: 8.8pt;
+        font-weight: 600;
+        color: #334155;
+        font-style: italic;
+        white-space: nowrap;
+      }
+
+      /* Project Items */
+      .project-category {
+        margin-bottom: 8px;
+      }
+
+      .project-item {
+        margin-bottom: 6px;
+      }
+
+      .project-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 2px;
+      }
+
+      .project-title {
+        font-size: 9.1pt;
+        font-weight: 700;
+        color: #0f172a;
+      }
+
+      .project-duration {
+        font-size: 8.5pt;
+        font-weight: 500;
+        color: #475569;
+        font-style: italic;
+      }
+
+      /* Bullet Lists */
+      ul.bullet-list {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+      }
+
+      ul.bullet-list li {
+        position: relative;
+        padding-left: 13px;
+        margin-bottom: 3px;
+        font-size: 8.8pt;
+        line-height: 1.36;
+        color: #1e293b;
+        text-align: justify;
+      }
+
+      ul.bullet-list li:last-child {
+        margin-bottom: 0;
+      }
+
+      ul.bullet-list li::before {
+        content: "•";
+        position: absolute;
+        left: 2px;
+        top: -0.5px;
+        color: #0f172a;
+        font-size: 9pt;
+        font-weight: bold;
+      }
+
+      /* Skills Grid */
+      .skills-container {
+        display: flex;
+        flex-direction: column;
+        gap: 3.5px;
+      }
+
+      .skill-row {
+        font-size: 8.7pt;
+        line-height: 1.35;
+        color: #1e293b;
+      }
+
+      .skill-label {
+        font-weight: 700;
+        color: #0f172a;
+      }
+
+      /* Education Items */
+      .edu-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-size: 8.8pt;
+        line-height: 1.4;
+        margin-bottom: 2.5px;
+      }
+
+      .edu-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .edu-degree {
+        font-weight: 600;
+        color: #0f172a;
+      }
+
+      .edu-institution {
+        font-weight: 400;
+        color: #334155;
+      }
+
+      .edu-year {
+        font-weight: 600;
+        color: #334155;
+        white-space: nowrap;
+      }
+
+      /* Languages */
+      .languages-text {
+        font-size: 8.8pt;
+        color: #1e293b;
+      }
+
+      @media print {
+        body {
+          background: transparent;
+        }
+        .page {
+          margin: 0;
+          box-shadow: none;
+          page-break-after: always;
+          break-after: page;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- PAGE 1 -->
+    <div class="page">
+      <!-- Header -->
+      <header class="header">
+        <h1>KARAN DEEPAK ARORA</h1>
+        <div class="title">
+          Senior Executive — NetSuite ERP (Techno-Functional Consultant)
+        </div>
+        <div class="contact-info">
+          New Panvel, Navi Mumbai, Maharashtra<span class="separator">|</span
+          >9987430022<span class="separator">|</span
+          ><a href="mailto:k.arora1303@gmail.com">k.arora1303@gmail.com</a>
+        </div>
+      </header>
+
+      <!-- Profile Summary -->
+      <section class="section">
+        <div class="section-title">PROFILE SUMMARY</div>
+        <p class="summary-text">
+          NetSuite Techno-Functional Consultant with
+          <strong>5+ years of hands-on experience</strong> across functional
+          architecture, SuiteScript development, end-to-end ERP implementation,
+          and managed-services support. Proven track record leading business
+          requirement-gathering sessions and translating complex workflows into
+          scalable NetSuite solutions across
+          <strong
+            >Order-to-Cash (O2C), Procure-to-Pay (P2P), Financial Management
+            (GL/AP/AR), Inventory, Logistics, and Fixed Assets</strong
+          >. Expert in SuiteBuilder configuration, SuiteFlow workflow
+          automation, Saved Searches, and SuiteScript 2.1 (Suitelet, Map/Reduce,
+          User Event, Scheduled Script, RESTlet, Custom GL Plugins) for 3-way
+          matching, financial reporting, and e-document certification.
+          Experienced in fit-gap analysis, Solution Design Documentation (SDD),
+          UAT scripting and execution, Master Data Management (MDM), executive
+          dashboards, and user enablement across Production and Sandbox
+          environments. Currently pursuing an <strong>MBA in Finance</strong> to
+          further enhance financial domain expertise and strategic ERP value
+          delivery. Full-stack development foundation (Node.js, React,
+          PostgreSQL, REST APIs) facilitates robust technical execution and
+          complex third-party system integrations.
+        </p>
+      </section>
+
+      <!-- Professional Experience -->
+      <section class="section">
+        <div class="section-title">PROFESSIONAL EXPERIENCE</div>
+
+        <!-- Bloombay Enterprises -->
+        <div class="job-item">
+          <div class="job-header">
+            <div class="job-title-company">
+              <span class="role-name">Senior Executive — NetSuite ERP</span> —
+              <span class="company-name">Bloombay Enterprises</span>
+            </div>
+            <div class="job-dates">Jul 2024 – Present</div>
+          </div>
+          <ul class="bullet-list">
+            <li>
+              Lead the post-go-live managed-services lifecycle for NetSuite ERP
+              — directing ticket triage, root-cause analysis, and solution
+              design across SCM and Finance modules, ensuring high system uptime
+              and data consistency across Production and Sandbox.
+            </li>
+            <li>
+              Architect, develop, and deploy robust SuiteScript 2.1
+              customizations (Suitelets, Map/Reduce, User Event, Scheduled
+              Scripts, RESTlets) to automate core business logic, e-document
+              generation, digital certification, and 3-way matching workflows.
+            </li>
+            <li>
+              Conduct comprehensive fit-gap analyses for new business
+              requirements, guiding stakeholders toward standard NetSuite
+              (SuiteBuilder) features where viable and articulating
+              ROI/maintenance trade-offs before initiating custom development.
+            </li>
+            <li>
+              Design and configure SuiteFlow workflows and scheduled automation
+              across O2C, P2P, and inventory operations, delivering a measurable
+              20%+ increase in overall operational throughput and reducing
+              manual touchpoints.
+            </li>
+            <li>
+              Maintain and enforce master data governance to ensure accuracy and
+              integrity across financial and operational records; maintain
+              end-to-end transaction integrity for Order-to-Cash and
+              Procure-to-Pay processes.
+            </li>
+            <li>
+              Develop custom Saved Searches, SuiteAnalytics datasets, Financial
+              Reports, and Executive Dashboards to facilitate real-time
+              operational tracking and strategic executive decision-making.
+            </li>
+            <li>
+              Deliver structured application support, standard operating
+              procedure (SOP) documentation, and cross-functional training to
+              SCM, Procurement, and Finance teams, ensuring seamless adherence
+              to NetSuite best practices.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Proteus Technologies - ERP Functional Consultant -->
+        <div class="job-item">
+          <div class="job-header">
+            <div class="job-title-company">
+              <span class="role-name">ERP Functional Consultant</span> —
+              <span class="company-name">Proteus Technologies Pvt Ltd</span>
+            </div>
+            <div class="job-dates">Dec 2022 – Jul 2024</div>
+          </div>
+          <ul class="bullet-list">
+            <li>
+              Led end-to-end client onboarding and ERP implementation lifecycles
+              — defining project scope, milestones, and deliverables, and
+              translating business requirement-gathering sessions into
+              functional configurations.
+            </li>
+            <li>
+              Authored and executed comprehensive User Acceptance Testing (UAT)
+              test scripts, tracked functional discrepancies, and coordinated
+              with technical teams to align system behavior with signed-off
+              business requirements.
+            </li>
+            <li>
+              Delivered structured key-user and end-user training programs
+              across client organizations, substantially driving user adoption
+              and minimizing post-implementation support overhead.
+            </li>
+            <li>
+              Managed master data migration, validation, and data mapping for
+              accuracy, completeness, and reliable reporting across financial
+              and operational modules.
+            </li>
+            <li>
+              Delivered hands-on live cutover support and early-life
+              stabilization following go-live, ensuring minimal disruption to
+              business operations during critical transition phases.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Proteus Technologies - CRM Executive -->
+        <div class="job-item">
+          <div class="job-header">
+            <div class="job-title-company">
+              <span class="role-name"
+                >CRM Support and Implementation Executive</span
+              >
+              — <span class="company-name">Proteus Technologies</span>
+            </div>
+            <div class="job-dates">Mar 2022 – Dec 2022</div>
+          </div>
+          <ul class="bullet-list">
+            <li>
+              Supported CRM implementation and functional configuration — user
+              setup, master data import, role-based access, and analytical
+              report configuration for multi-client deployments.
+            </li>
+            <li>
+              Resolved user support tickets, administered change requests, and
+              deployed minor workflow enhancements to enhance CRM usability and
+              system adoption.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="page">
+      <!-- Projects Section -->
+      <section class="section">
+        <div class="section-title">PROJECTS</div>
+
+        <!-- NetSuite Customization & Automation Projects -->
+        <div class="project-category">
+          <div class="project-item">
+            <div class="project-header">
+              <div class="project-title">
+                NetSuite 3-Way Reconciliation &amp; AP Automation Engine
+              </div>
+              <div class="project-duration">Bloombay Enterprises</div>
+            </div>
+            <ul class="bullet-list">
+              <li>
+                Architected a Suitelet UI and Map/Reduce automation engine
+                performing automated 3-Way Matching across Purchase Orders (PO),
+                Item Receipts (IR), and Vendor Bills (VB) with configurable
+                tolerance limits and line-level discrepancy detection.
+              </li>
+              <li>
+                Implemented dynamic CSV export, variance reporting, and
+                automated exception routing, reducing manual AP reconciliation
+                effort by over 70%.
+              </li>
+            </ul>
+          </div>
+
+          <div class="project-item" style="margin-top: 5px">
+            <div class="project-header">
+              <div class="project-title">
+                Automated Financial Statements &amp; Bulk Distribution Engine
+              </div>
+              <div class="project-duration">Bloombay Enterprises</div>
+            </div>
+            <ul class="bullet-list">
+              <li>
+                Developed Suitelet, Scheduled, and Map/Reduce engines generating
+                dynamic Customer, Vendor, and Employee Statements using Advanced
+                PDF/HTML Templates with automated multi-recipient bulk email
+                dispatch and audit logging.
+              </li>
+            </ul>
+          </div>
+
+          <div class="project-item" style="margin-top: 5px">
+            <div class="project-header">
+              <div class="project-title">
+                Transfer Order Indent &amp; FEFO Inventory Fulfillment
+                Automation
+              </div>
+              <div class="project-duration">Bloombay Enterprises</div>
+            </div>
+            <ul class="bullet-list">
+              <li>
+                Engineered RESTlet and User Event solutions automating
+                multi-location Transfer Order indents, First-Expiry-First-Out
+                (FEFO) lot auto-allocation, and real-time Item Fulfillment
+                validation controls.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ERP Implementation Projects -->
+        <div class="project-category" style="margin-top: 6px">
+          <div
+            style="
+              font-size: 9pt;
+              font-weight: 700;
+              color: #1e293b;
+              margin-bottom: 4px;
+              text-transform: uppercase;
+              letter-spacing: 0.4px;
+            "
+          >
+            ERP Implementation &amp; Migration Projects (Vision ERP)
+          </div>
+
+          <div class="project-item">
+            <div class="project-header">
+              <div class="project-title">
+                INUEN &amp; GELTEC — ERP Implementations
+              </div>
+              <div class="project-duration">5 Months / 4 Months</div>
+            </div>
+            <ul class="bullet-list">
+              <li>
+                Implemented and provided go-live support across SCM, Finance,
+                Inventory, Logistics, and Manufacturing modules; managed master
+                data migration, user training, and post-implementation
+                stabilization.
+              </li>
+            </ul>
+          </div>
+
+          <div class="project-item" style="margin-top: 4px">
+            <div class="project-header">
+              <div class="project-title">
+                SUN PETRO — Enterprise ERP Migration
+              </div>
+              <div class="project-duration">3 Months</div>
+            </div>
+            <ul class="bullet-list">
+              <li>
+                Delivered functional cutover and go-live support for enterprise
+                migration from legacy E12 system to Vision ERP across Purchase,
+                Sales, Inventory, Logistics, and Finance.
+              </li>
+            </ul>
+          </div>
+
+          <div class="project-item" style="margin-top: 4px">
+            <div class="project-header">
+              <div class="project-title">
+                ALDE MEDI &amp; NEON — HR &amp; Fixed Assets Implementations
+              </div>
+              <div class="project-duration">3 Months / 6 Months</div>
+            </div>
+            <ul class="bullet-list">
+              <li>
+                Configured HR and Fixed Assets modules, establishing automated
+                approval workflows, asset depreciation schedules, employee
+                master data setup, and statutory reporting.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Full-Stack Project -->
+        <div class="project-category" style="margin-top: 6px">
+          <div class="project-item">
+            <div class="project-header">
+              <div class="project-title">Full-Stack Enterprise Web Portal</div>
+              <div class="project-duration">Independent Development</div>
+            </div>
+            <ul class="bullet-list">
+              <li>
+                Engineered a scalable, multi-tenant Node.js/Express backend with
+                Prisma ORM and PostgreSQL for isolated client environments,
+                including REST API design for inbound/outbound ERP integration
+                scenarios.
+              </li>
+              <li>
+                Built a responsive React (Vite, Redux Toolkit, React Query,
+                Tailwind CSS) front end; implemented JWT/bcrypt authentication
+                and AWS S3 document storage for vendor management and billing
+                workflows.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Skills -->
+      <section class="section" style="margin-top: -2px">
+        <div class="section-title">KEY SKILLS</div>
+        <div class="skills-container">
+          <div class="skill-row">
+            <span class="skill-label">NetSuite Technical:</span> SuiteScript 2.1
+            (Suitelet, Map/Reduce Script, User Event Script, Scheduled Script,
+            RESTlet, Client Script, Custom GL Plugins), SuiteFlow, SuiteBuilder,
+            Saved Searches, SuiteScript Search/Query API, Advanced PDF/HTML
+            Templates
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">ERP Business Processes:</span>
+            Order-to-Cash (O2C), Procure-to-Pay (P2P), 3-Way Matching, Financial
+            Management (GL/AR/AP), Inventory Management, FEFO Allocation,
+            Logistics, Fixed Assets
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">Implementation &amp; Support:</span>
+            Fit-Gap Analysis, Requirement Gathering (BRD/SDD), UAT Scripting
+            &amp; Execution, Master Data Management (MDM), Go-Live Support,
+            Production &amp; Sandbox Support
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">Reporting &amp; Analytics:</span> Saved
+            Searches, Financial Reports, Dashboards, Executive Reporting,
+            NetSuite AI (SuiteSense) awareness
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">Technical &amp; Full-Stack:</span> Python,
+            FastAPI, Node.js, Express.js, React, Vite, Redux Toolkit,
+            PostgreSQL, Prisma ORM, REST API Development, SQL, Schema Design
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">Financial &amp; Analytics Tools:</span>
+            Advanced MS Excel, VBA / Macros, Power Query, Financial Modeling, MS
+            PowerPoint, Git, Postman, Jira
+          </div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="section" style="margin-top: -2px">
+        <div class="section-title">EDUCATION</div>
+        <div class="edu-item">
+          <div>
+            <span class="edu-degree"
+              >Master of Business Administration (MBA) — Finance
+              (Pursuing)</span
+            >
+          </div>
+          <div class="edu-year">Jul 2025 – Present</div>
+        </div>
+        <div class="edu-item">
+          <div>
+            <span class="edu-degree"
+              >Bachelor of Business Administration / Bachelor of Management
+              Studies (B.B.A / B.M.S)</span
+            >
+            — <span class="edu-institution">Mumbai University</span>
+          </div>
+          <div class="edu-year">2021</div>
+        </div>
+        <div class="edu-item">
+          <div>
+            <span class="edu-degree">Higher Secondary (XII)</span> —
+            <span class="edu-institution">State Board</span>
+          </div>
+          <div class="edu-year">2018</div>
+        </div>
+        <div class="edu-item">
+          <div>
+            <span class="edu-degree">Secondary (X)</span> —
+            <span class="edu-institution">State Board</span>
+          </div>
+          <div class="edu-year">2016</div>
+        </div>
+      </section>
+
+      <!-- Languages -->
+      <section class="section" style="margin-top: -2px; margin-bottom: 0">
+        <div class="section-title">LANGUAGES</div>
+        <div class="languages-text">
+          English (Fluent)<span
+            class="separator"
+            style="margin: 0 6px; color: #94a3b8"
+            >|</span
+          >Hindi (Fluent)<span
+            class="separator"
+            style="margin: 0 6px; color: #94a3b8"
+            >|</span
+          >Marathi (Fluent)<span
+            class="separator"
+            style="margin: 0 6px; color: #94a3b8"
+            >|</span
+          >Punjabi (Conversational)
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
