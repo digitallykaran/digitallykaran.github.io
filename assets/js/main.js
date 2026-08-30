@@ -151,6 +151,15 @@ document.addEventListener('DOMContentLoaded', () => {
         navigator.clipboard.writeText(textToCopy).then(() => {
           showToast(`Copied to clipboard: ${textToCopy}`);
           btn.textContent = 'Copied!';
+          
+          // Track in Google Analytics
+          if (typeof gtag === 'function') {
+            gtag('event', 'contact_copy', {
+              event_category: 'engagement',
+              event_label: targetId || 'contact_info'
+            });
+          }
+
           setTimeout(() => {
             btn.textContent = 'Copy';
           }, 2000);
@@ -193,9 +202,18 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
+      const selectedTopic = document.getElementById('consult_service_select')?.value || 'General';
 
       submitBtn.disabled = true;
       submitBtn.innerHTML = 'Sending Inquiry...';
+
+      // Track Form Submission in Google Analytics
+      if (typeof gtag === 'function') {
+        gtag('event', 'form_submission', {
+          event_category: 'conversion',
+          event_label: selectedTopic
+        });
+      }
 
       setTimeout(() => {
         submitBtn.innerHTML = '✓ Inquiry Sent Successfully!';
@@ -209,6 +227,30 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 900);
     });
   }
+
+  // 11. TRACK RESUME DOWNLOADS IN GA4
+  document.querySelectorAll('a[download]').forEach(link => {
+    link.addEventListener('click', () => {
+      if (typeof gtag === 'function') {
+        gtag('event', 'resume_download', {
+          event_category: 'engagement',
+          event_label: 'Karan_Arora_Resume.pdf'
+        });
+      }
+    });
+  });
+
+  // 12. TRACK LINKEDIN OUTBOUND CLICKS IN GA4
+  document.querySelectorAll('a[href*="linkedin.com"]').forEach(link => {
+    link.addEventListener('click', () => {
+      if (typeof gtag === 'function') {
+        gtag('event', 'linkedin_click', {
+          event_category: 'outbound',
+          event_label: 'LinkedIn Profile'
+        });
+      }
+    });
+  });
 });
 
 // Toast Notification
