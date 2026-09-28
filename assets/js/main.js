@@ -1,11 +1,10 @@
 /**
- * Main Interactive Application Script
- * Karan Deepak Arora — Executive NetSuite Techno-Functional Portfolio
+ * Executive Techno-Functional Portfolio Script
+ * Karan Deepak Arora — NetSuite ERP Administrator & Techno-Functional Consultant
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. DYNAMIC EXPERIENCE CALCULATION
-  const careerStartDate = new Date(2022, 2, 1); // March 1, 2022
   const formattedExp = '5+';
 
   document.querySelectorAll('.dynamic-exp-val').forEach(el => {
@@ -15,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     el.textContent = formattedExp + ' years';
   });
 
-  // 2. ULTRA-SMOOTH HARDWARE-ACCELERATED SCROLLING
+  // 2. ULTRA-SMOOTH SCROLLING
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
@@ -24,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         e.preventDefault();
-        const navHeight = 74;
+        const navHeight = 72;
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - navHeight;
 
@@ -33,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
           behavior: 'smooth'
         });
 
-        // Update history without sudden jump
         if (history.pushState) {
           history.pushState(null, null, targetId);
         }
@@ -45,9 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.querySelector('.navbar');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 30) {
-      navbar.classList.add('scrolled');
+      navbar?.classList.add('scrolled');
     } else {
-      navbar.classList.remove('scrolled');
+      navbar?.classList.remove('scrolled');
     }
   }, { passive: true });
 
@@ -59,14 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const drawerLinks = document.querySelectorAll('.drawer-link');
 
   function openDrawer() {
-    mobileDrawer.classList.add('open');
-    drawerBackdrop.classList.add('open');
+    mobileDrawer?.classList.add('open');
+    drawerBackdrop?.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
 
   function closeDrawer() {
-    mobileDrawer.classList.remove('open');
-    drawerBackdrop.classList.remove('open');
+    mobileDrawer?.classList.remove('open');
+    drawerBackdrop?.classList.remove('open');
     document.body.style.overflow = '';
   }
 
@@ -102,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sections.forEach(sec => sectionObserver.observe(sec));
 
-  // 6. PROJECT FILTERING
+  // 6. CASE STUDY FILTERING
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
 
@@ -117,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const category = card.getAttribute('data-category');
         if (filter === 'all' || category === filter || category.includes(filter)) {
           card.style.display = 'flex';
-          card.style.animation = 'fadeIn 0.3s ease';
         } else {
           card.style.display = 'none';
         }
@@ -125,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 7. ACCORDION DEEP DIVE TOGGLES
+  // 7. ACCORDION DETAILS TOGGLE
   document.querySelectorAll('.breakdown-toggle').forEach(toggle => {
     toggle.addEventListener('click', () => {
       const content = toggle.nextElementSibling;
@@ -133,127 +130,71 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (isExpanded) {
         content.classList.remove('open');
-        toggle.querySelector('.toggle-arrow').textContent = '▼ Plan & Architecture';
+        toggle.querySelector('.toggle-arrow').textContent = '▼ View Architecture & Impact Details';
       } else {
         content.classList.add('open');
-        toggle.querySelector('.toggle-arrow').textContent = '▲ Close Deep Dive';
+        toggle.querySelector('.toggle-arrow').textContent = '▲ Close Details';
       }
     });
   });
 
-  // 8. COPY TO CLIPBOARD
-  document.querySelectorAll('.copy-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.getAttribute('data-copy-target');
-      const textToCopy = document.getElementById(targetId)?.textContent?.trim() || btn.getAttribute('data-copy-val');
-
-      if (textToCopy) {
-        navigator.clipboard.writeText(textToCopy).then(() => {
-          showToast(`Copied to clipboard: ${textToCopy}`);
-          btn.textContent = 'Copied!';
-          
-          // Track in Google Analytics
-          if (typeof gtag === 'function') {
-            gtag('event', 'contact_copy', {
-              event_category: 'engagement',
-              event_label: targetId || 'contact_info'
-            });
-          }
-
-          setTimeout(() => {
-            btn.textContent = 'Copy';
-          }, 2000);
-        }).catch(() => {
-          showToast('Failed to copy');
-        });
-      }
-    });
-  });
-
-  // 9. TOPIC SELECTION HELPER
-  window.selectConsultingService = function(serviceName) {
-    const serviceSelect = document.getElementById('consult_service_select');
-    const messageBox = document.getElementById('consult_message');
-    const contactSection = document.getElementById('contact');
-
-    if (serviceSelect) {
-      for (let i = 0; i < serviceSelect.options.length; i++) {
-        if (serviceSelect.options[i].value.includes(serviceName) || serviceSelect.options[i].text.includes(serviceName)) {
-          serviceSelect.selectedIndex = i;
-          break;
-        }
-      }
-    }
-    if (messageBox && !messageBox.value) {
-      messageBox.value = `Hi Karan, I would like to connect regarding: ${serviceName}. Let's discuss further.`;
-    }
-
-    if (contactSection) {
-      const navHeight = 74;
-      const targetPosition = contactSection.getBoundingClientRect().top + window.pageYOffset - navHeight;
-      window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-    }
-  };
-
-  // 10. CONSULTATION FORM SUBMISSION
+  // 8. SIMPLIFIED SECURE INQUIRY FORM SUBMISSION & GA4 EVENT TRACKING
   const contactForm = document.getElementById('consultation_form');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
-      const selectedTopic = document.getElementById('consult_service_select')?.value || 'General';
 
       submitBtn.disabled = true;
-      submitBtn.innerHTML = 'Sending Inquiry...';
+      submitBtn.innerHTML = 'Sending Message...';
 
-      // Track Form Submission in Google Analytics
-      if (typeof gtag === 'function') {
-        gtag('event', 'form_submission', {
-          event_category: 'conversion',
-          event_label: selectedTopic
+      // Send GA4 Event
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'submit_lead_form', {
+          event_category: 'Contact',
+          event_label: 'Inquiry Form Submission'
         });
       }
 
       setTimeout(() => {
-        submitBtn.innerHTML = '✓ Inquiry Sent Successfully!';
-        showToast('Thank you! Your message has been prepared. Karan will reach out shortly.');
+        submitBtn.innerHTML = '✓ Message Sent!';
+        showToast('Thank you! Your message has been sent to Karan Arora. I will reach out promptly.');
         contactForm.reset();
 
         setTimeout(() => {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalText;
         }, 3500);
-      }, 900);
+      }, 700);
     });
   }
 
-  // 11. TRACK RESUME DOWNLOADS IN GA4
-  document.querySelectorAll('a[download]').forEach(link => {
-    link.addEventListener('click', () => {
-      if (typeof gtag === 'function') {
-        gtag('event', 'resume_download', {
-          event_category: 'engagement',
-          event_label: 'Karan_Arora_Resume.pdf'
+  // 9. GA4 EVENT TRACKING FOR CONNECT BUTTONS
+  document.querySelectorAll('a[href*="wa.me"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'click_whatsapp', {
+          event_category: 'Connect',
+          event_label: 'WhatsApp Chat CTA'
         });
       }
     });
   });
 
-  // 12. TRACK LINKEDIN OUTBOUND CLICKS IN GA4
-  document.querySelectorAll('a[href*="linkedin.com"]').forEach(link => {
-    link.addEventListener('click', () => {
-      if (typeof gtag === 'function') {
-        gtag('event', 'linkedin_click', {
-          event_category: 'outbound',
-          event_label: 'LinkedIn Profile'
+  document.querySelectorAll('a[href*="linkedin.com"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'click_linkedin', {
+          event_category: 'Connect',
+          event_label: 'LinkedIn Profile CTA'
         });
       }
     });
   });
 });
 
-// Toast Notification
+// Toast Notification Generator
 function showToast(message) {
   let toast = document.getElementById('global_toast');
   if (!toast) {
@@ -268,5 +209,5 @@ function showToast(message) {
 
   setTimeout(() => {
     toast.classList.remove('show');
-  }, 3000);
+  }, 3500);
 }
